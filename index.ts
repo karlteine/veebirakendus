@@ -4,6 +4,7 @@ import bodyParser from "body-parser";
 import stringsController from "./controllers/strings";
 import productsController from "./controllers/products";
 import productListController from "./controllers/productslist";
+import parcelController from "./controllers/parcelmachines"
 
 const app: Express = express();
 
@@ -19,6 +20,7 @@ app.get('/', (req: Request, res: Response) => {
 app.use('/', stringsController);
 app.use('/', productsController);
 app.use('/', productListController);
+app.use('/', parcelController)
 
 app.listen(3000,() => {
   console.log(`[server]: Server is running at http://localhost:3000`);
